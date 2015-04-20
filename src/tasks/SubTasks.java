@@ -5,7 +5,8 @@ package tasks;
 
 /**
  * @author Anish
- *
+ *Modified by Bin Chen 
+ *Last Modified: 2015/4/20
  */
 public class SubTasks {
 
@@ -130,9 +131,9 @@ public class SubTasks {
 		String taskSpec=tp.GetAverageTaskSpec(3,5);
 //		String taskSpec=tp.GetEasyTaskSpec(3,5);
 		
-		String a="Num_Agents3 = 1,1,1,1,2\nQuality3 = 0.1,0.7,0.2,0.2,0.1";
-		System.out.println(a);
-		System.out.println(tp.TestTasks(a));
+//		String a="Num_Agents3 = 1,1,1,1,2\nQuality3 = 0.1,0.7,0.2,0.2,0.1";
+//		System.out.println(a);
+//		System.out.println(tp.TestTasks(a));
 		System.out.println(tp.TestTasks(taskSpec));
 	}
 }
