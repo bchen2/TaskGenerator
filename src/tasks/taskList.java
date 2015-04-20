@@ -21,18 +21,18 @@ public class taskList {
 		double TaskOpenness = 0.00;
 		String [] AllConfigurations = {"HAE","HEA","AEH","AHE","EHA","EAH","UNIFORM"};
 		
-		while(TaskOpenness <=1.00){
-				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.6,0.3,0.1));
-				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.6,0.1,0.3));
-				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.3,0.6,0.1));
-				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.1,0.6,0.3));
-				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.3,0.1,0.6));
-				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.1,0.3,0.6));
-				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.33,0.33,0.34));
-				
-				TaskOpenness += 0.25;
-		}
-		
+//		while(TaskOpenness <=1.00){
+//				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.6,0.3,0.1));
+//				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.6,0.1,0.3));
+//				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.3,0.6,0.1));
+//				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.1,0.6,0.3));
+//				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.3,0.1,0.6));
+//				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.1,0.3,0.6));
+//				TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.33,0.33,0.34));
+//				
+//				TaskOpenness += 0.25;
+//		}
+		TaskListOrdering(TaskOpenness, 40, 15504*3, new Distribution(0.6,0.3,0.1));
 	}//end main
 	
 	
@@ -64,6 +64,8 @@ public class taskList {
 		}
 		
 		int BeginIndex = (int) TotalNumberOfTask/3 - InitialNumberOfHardTasks;
+		System.out.println( (int) TotalNumberOfTask/3);
+		System.out.println(BeginIndex);
 		// Add Initial Average Tasks 
 		for(int i=BeginIndex; i<= BeginIndex+InitialNumberOfAvergaeTasks; i++){
 			AllTasksInsideSimulation.add(i);
@@ -157,22 +159,22 @@ public class taskList {
 		} // end of for
 		
 	
-		try {
-			PrintWriter out = new PrintWriter("GeneratedTasks/config_task_TO"+TaskOpenness+"HP"+
-		                                       TaskDistribution.HardPercentage+"AP"+TaskDistribution.AveragePercentage
-		                      );
-			String result="";
-			int i=0;
-			for (int chosenTask: AllTasksInsideSimulation){
-				i++;
-				result=result+i+"="+chosenTask+"\n";
-			}
-			out.write(result);
-			out.close();
-		} 
-		catch (FileNotFoundException fnfe) {
-			fnfe.printStackTrace(); 
-			}
+//		try {
+//			PrintWriter out = new PrintWriter("GeneratedTasks/config_task_TO"+TaskOpenness+"HP"+
+//		                                       TaskDistribution.HardPercentage+"AP"+TaskDistribution.AveragePercentage
+//		                      );
+//			String result="";
+//			int i=0;
+//			for (int chosenTask: AllTasksInsideSimulation){
+//				i++;
+//				result=result+i+"="+chosenTask+"\n";
+//			}
+//			out.write(result);
+//			out.close();
+//		} 
+//		catch (FileNotFoundException fnfe) {
+//			fnfe.printStackTrace(); 
+//			}
 		
 		
 		
